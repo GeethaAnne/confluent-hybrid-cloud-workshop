@@ -2,11 +2,11 @@ workshop:
 
   # A name for the workshop, used to uniquely identify individual resources
   # IMPORTANT: can only contain of lowercase letters and numbers
-  name: <My Workshop Name>   
+  name: workshop1
  
   # The number of people attending the workshop ssh password
   participant_count: 2
-  participant_password: <VM OS Password>
+  participant_password: Confluentworkshop2022!
 
   #
   # workshop-core
@@ -15,22 +15,21 @@ workshop:
 
     # The workshop cloud provider & VM configuration
     cloud_provider: aws
-    access_key: <access key>
-    secret_key: <secret key>
-    region: eu-west-2
+    profile: <AWS_PROFILE_NAME>
+    region: us-east-2
     vm_type: t2.xlarge
     vm_disk_size: 100
     # EU - does not exist in SG
-    ami: ami-0eb89db7593b5d434
+    #ami: ami-0eb89db7593b5d434
     # SG - Ubuntu Server 18.04 LTS (HVM), SSD Volume Type
     #ami: ami-0f7719e8b7ba25c61
     # us-east-2 - Ubuntu Server 18.04 LTS (HVM), SSD Volume Type
-    #ami: ami-0b9064170e32bde34
+    ami: ami-0b9064170e32bde34
 
     # The workshop Confluent Cloud configuration
-    ccloud_bootstrap_servers: <CCloud Bootstrap Server>
-    ccloud_api_key: <CCloud API Key>
-    ccloud_api_secret: <CCloud API Secret>
+    ccloud_bootstrap_servers: <BOOTSTRAP_SERVER>
+    ccloud_api_key: <API_KAFKA_KEY>
+    ccloud_api_secret: <API__KAFKA_SECRET>
 
     # List of ccloud topics to pre-create
     ccloud_topics: sales_orders,sales_order_details,purchase_orders,purchase_order_details,customers,suppliers,products
@@ -41,9 +40,9 @@ workshop:
     #feedback_form_url: "<Feedback Form Url>"
 
     #tags
-    owner_email: <Your email>
-    purpose: <Workshop name>
-    ref_link: <Workshop Git repo url>
+    owner_email: <YOUR_EMAIL>
+    purpose: immersion-day
+    ref_link: https://github.com/confluentinc/confluent-hybrid-cloud-workshop
 
   #
   # workshop extensions

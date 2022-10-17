@@ -31,6 +31,10 @@ variable "ami" {
   description = "Amazon Machine Image"
 }
 
+variable "profile" {
+  description = "AWS Profile"
+}
+/*
 variable "access_key" {
   description = "AWS Access Key"
 }
@@ -39,6 +43,10 @@ variable "secret_key" {
   description = "AWS Secret Key"
 }
 
+variable "session_token" {
+  description = "AWS Session Token for Temporary Credentials"
+}
+*/
 // Confluent Cloud variables
 variable "ccloud_bootstrap_servers" {
   description = "Confluent Cloud username"

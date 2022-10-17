@@ -41,14 +41,14 @@ resource "random_string" "random_string" {
   special = false
   upper = false
   lower = true
-  number = false
+  numeric = false
 }
-
+/*
 data "template_file" "aws_ws_iam_name" {
   template = "${var.name}-${random_string.random_string.result}"
 }
 
-resource "aws_iam_user" "ws" {
+/*resource "aws_iam_user" "ws" {
   name = "tf-user-${data.template_file.aws_ws_iam_name.rendered}"
   path = "/system/"
 }
@@ -67,7 +67,7 @@ EOF
   filename = "${path.root}/aws_credentials.txt"
 }
 
-
+*/
 resource "aws_instance" "instance" {
   count         = var.participant_count
   ami           = var.ami
@@ -166,7 +166,8 @@ resource "aws_security_group" "instance" {
  Provisioners
 */
 resource "null_resource" "vm_provisioners" {
-  depends_on = [aws_instance.instance, local_file.aws_credentials]
+  //depends_on = [aws_instance.instance, local_file.aws_credentials]
+  depends_on = [aws_instance.instance]
   count      = var.participant_count
 
   // Copy bootstrap script to the VM
@@ -237,7 +238,7 @@ resource "null_resource" "vm_provisioners" {
       host     = aws_instance.instance[count.index].public_ip
     }
   }
-
+  /*
   //Adding AWS Credentials for Connect
   provisioner "file" {
     source      = "aws_credentials.txt"
@@ -250,6 +251,7 @@ resource "null_resource" "vm_provisioners" {
       host     = aws_instance.instance[count.index].public_ip
     }
   }
+  */
 }
 
 
