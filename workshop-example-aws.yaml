@@ -15,7 +15,7 @@ workshop:
 
     # The workshop cloud provider & VM configuration
     cloud_provider: aws
-    profile: <AWS_PROFILE_NAME>
+    profile: cc-internal-customer-service-innovation-1-administrator
     region: us-east-2
     vm_type: t2.xlarge
     vm_disk_size: 100
@@ -27,9 +27,9 @@ workshop:
     ami: ami-0b9064170e32bde34
 
     # The workshop Confluent Cloud configuration
-    ccloud_bootstrap_servers: <BOOTSTRAP_SERVER>
-    ccloud_api_key: <API_KAFKA_KEY>
-    ccloud_api_secret: <API__KAFKA_SECRET>
+    ccloud_bootstrap_servers: pkc-ymrq7.us-east-2.aws.confluent.cloud:9092
+    ccloud_api_key: WHM47SQWPKK4XERO
+    ccloud_api_secret: jWkLFibD/rajiFaoUTSCHpJmZ5Df9XwU3uw3WgEGt04VFnQDbOmjSN8WBExUKg53
 
     # List of ccloud topics to pre-create
     ccloud_topics: sales_orders,sales_order_details,purchase_orders,purchase_order_details,customers,suppliers,products
@@ -40,9 +40,9 @@ workshop:
     #feedback_form_url: "<Feedback Form Url>"
 
     #tags
-    owner_email: <YOUR_EMAIL>
+    owner_email: ganne@confluent.io
     purpose: immersion-day
-    ref_link: https://github.com/confluentinc/confluent-hybrid-cloud-workshop
+    ref_link: https://github.com/GeethaAnne/confluent-hybrid-cloud-workshop
 
   #
   # workshop extensions
