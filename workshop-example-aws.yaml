@@ -5,7 +5,7 @@ workshop:
   name: workshop1
  
   # The number of people attending the workshop ssh password
-  participant_count: 2
+  participant_count: 35
   participant_password: Confluentworkshop2022!
 
   #
@@ -16,7 +16,7 @@ workshop:
     # The workshop cloud provider & VM configuration
     cloud_provider: aws
     profile: cc-internal-customer-service-innovation-1-administrator
-    region: us-east-2
+    region: us-east-1
     vm_type: t2.xlarge
     vm_disk_size: 100
     # EU - does not exist in SG
